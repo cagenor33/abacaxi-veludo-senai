@@ -5,13 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./img/logo/logoAV.png" type="image/png"><!--Favicon aba do site-->
-    <title>Home</title>
+    <title>Quem Somos</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
-    <link rel="stylesheet" href="./css/estilos.css">
-    <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css">
-    <script src="./js/validacaoIndex.js" defer></script>
-    <script src="./js/estilos.js" defer></script>
+    <link rel="stylesheet" href="./css/quemsomos.css">
+    <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.min.css">
 </head>
 <body>
     <!--=============================================================================================
@@ -40,8 +38,8 @@
                 alt="ir para a página whatsapp" 
                 target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
-            </a>    
-                        
+            </a>  
+                         
         </nav>        
 
         <!-- Menu principal do site. Serviços, contato, sobre -->
@@ -61,69 +59,45 @@
         MAIN - CORPO DO SITE
     ==============================================================================================-->
     <main class="main">
-        <!-- 
-        Banner principal da página
-        -->
-        <section id="banner">
-            <img src="./img/banner/Doces2.png" alt="banner do site" id="bannerSite">
+
+        <section class="quemsomos">
+            <div class="quemsomos-itens">
+                <h1>Quem Faz</h1>
+                <p>Nubia Fiuza já está no mundo da Confeitaria há 5 anos, produzindo deliciosos bolos e doces que são vendidos em sua confeitaria e em eventos em Salvador e RMS.
+
+                    Buffet em Domicílio foi uma ideia que deu muito certo, levando a organização, barraquinhas, doces e salgados para as casas dos baianos.
+                    Novidades e novas receitas podem ser vistas aqui no site ou nas redes sociais. São delícias irresistíveis e difíceis de dizer qual é a mais gostosa ou escolher qual provar primeiro.
+                    
+                    Leve a Confeitaria Abacaxi Veludo para sua casa. Acesse suas redes sociais e/ou entre em contato para conhecer a grande variedade de doces e salgados.
+                </p>
+            </div>
+        
+            <div class="quemsomos-itens">
+                <img src="./img/produtos/quemsomos.png" alt="Quem somos">
+            </div>
+
+            <div class="quemsomos-itens">
+                <img src="./img/produtos/quemsomos2.png" alt="Quem somos">
+            </div>
+
+            <div class="quemsomos-itens">
+                <h3>Visão</h3>
+                <p>Satisfazer nossos clientes, fornecendo o produto que ele procura.</p>
+                <h3>Missão</h3>
+                <p>Fornecer produtos de alta qualidade e variados, para todos os seus clientes e amigos.</p>
+                <h3>Valores</h3>
+                <ul>
+                    <li>» Satisfação em Atender Bem</li>
+                    <li>» Valorização do Ser Humano</li>
+                    <li>» Respeito ao Consumidor</li>
+                    <li>» Transparência no Serviços</li>
+                </ul>
+            </div>            
         </section>
-        <!-- 
-        menu de bolos
-        -->
-        <section class="menuProdutos">
-            <h1>Menu de Bolos</h1>
-            <section class="menuProdutos-itens">
-                <img src="./img/produtos/boloPersolnalisado/av10.png" alt="bolo personalisado">
-                <img src="./img/produtos/boloPersolnalisado/av12.png" alt="bolo personalisado">
-                <img src="./img/produtos/boloTradicional/tradicional.png" alt="bolo tradicional">
-                <img src="./img/produtos/boloTradicional/av9.png" alt="bolo tradicional">
-            </section>
-        </section>
-        <!-- 
-        mini bolos
-        -->
-        <section class="menuProdutos">
-            <h1>Caseirinhos e Mini Vulcão</h1>
-            <section class="menuProdutos-itens">
-                <img src="./img/produtos/caseirinhoEminivulcao/av7.png" alt="Caseirinhos e Mini Vulcão" class="prodItem">
-                <img src="./img/produtos/caseirinhoEminivulcao/Imagem5.png" alt="Caseirinhos e Mini Vulcão" class="prodItem">
-                <img src="./img/produtos/caseirinhoEminivulcao/Imagem6.png" alt="Caseirinhos e Mini Vulcão" class="prodItem">
-                <img src="./img/produtos/caseirinhoEminivulcao/Imagem7.png" alt="Caseirinhos e Mini Vulcão" class="prodItem">
-            </section>
-        </section>
-        <!-- 
-        fatias slices
-        -->
-        <section class="menuProdutos">
-            <h1>Fatias Slices</h1>
-            <section class="menuProdutos-itens">
-                <img src="./img/produtos/fatiasSlices/Imagem1.png" alt="Fatias Slices">
-                <img src="./img/produtos/fatiasSlices/Imagem2.png" alt="Fatias Slices">
-                <img src="./img/produtos/fatiasSlices/Imagem3.png" alt="Fatias Slices">
-                <img src="./img/produtos/fatiasSlices/Imagem4.png" alt="Fatias Slices">
-            </section>
-        </section>
-        </br></br></br>
-        <!-- 
-        Cadastro de email para feed de noticias
-        -->
-        <section class="feedemail">
-            <p>NEWSLATER</p>
-            <h2>Receba todas as promoções</h2>
-            <p>Quer receber nossas ofertas? Cadastre-se e comece a recebê-las!</p>
-            <br>
-            <br>
-            <form action = "./index.html" method="post" id="cadastro" target="_blank">
-                <input type="email" id="email" name="email" placeholder="E-mail" maxlength="50">
-                <small></small>                
-            
-                <br>
-                <button type="submit" id="submit-button">Enviar</button>
-            </form>
-        </section>
+        </br></br>
     </main>    
-    
-    <!--============================================================================================= 
+
+   <!--============================================================================================= 
         FOOTER - RODAPÉ DO SITE
     ==============================================================================================-->
     
