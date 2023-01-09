@@ -7,7 +7,7 @@ body {
     height: 100vh;
     padding-top: 185px; /*inicio do main apos o header fixo*/
 
-    background-color: var(--bgColorClaro);
+    background-color: var(--bgColorMain);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;    
@@ -22,14 +22,15 @@ a,ul,li,p,h1,h2,h3,h4,h5,h6,input,label {
 :root {
     /* Cores das fontes do site */
     --colorTextoEscuro: #590d22;
-    --colorTextoClaro: #ffccd5;
-    --colorTextoHoverClaro: #ff4d6d;
-    --colorTextoHoverEscuro: #590d22;
+    --colorTextoClaro: #FFF0F3;
+    --colorTextoHover: #ff4d6d;
     /* Cores dos backgrounds do site */
-    --bgColorEscuro: #800F2F;
-    --bgColorClaro: #FFF0F3;
-    --brColorMedioEscuro: #FF8FA3;
-    --bgColorMedioClaro: #FFCCD5;
+    --bgColorFormCopy: #800F2F;
+    --bgColorMain: #FFF0F3;
+    --bgColorMainTitle: #ffeaf7;
+    --bgColorFooter: #FFB3C1;
+    --bgColorHeader: #FFCCD5;
+    --bgColorHamburger: #590D22;
     /* Cores das bordas do site */
     --colorBorder: #d3d0d0;
 }
@@ -47,7 +48,7 @@ a,ul,li,p,h1,h2,h3,h4,h5,h6,input,label {
 }
 
 .menuSuperior {
-    background-color: var(--bgColorEscuro);
+    background-color: var(--bgColorFormCopy);
     display: flex;
     width: 100%;
 }
@@ -59,20 +60,20 @@ a,ul,li,p,h1,h2,h3,h4,h5,h6,input,label {
 }
 
 .menuSup-item:hover {
-    color: var(--colorTextoHoverClaro);
+    color: var(--colorTextoHover);
 }
 
 .menuPrincipal {
-    background-color: var(--bgColorMedioClaro);
+    background-color: var(--bgColorHeader);
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
     padding: 0px 0px 0px 0px;
     height: 140px;
 }
 
-.menuPri-item {
+.nav-menu,.nav-link  {
     display: flex;
     color: var(--colorTextoEscuro);
     letter-spacing: 5px;
@@ -80,14 +81,117 @@ a,ul,li,p,h1,h2,h3,h4,h5,h6,input,label {
     gap: 100px;
 }
 
-.menuPri-item:hover {
-    color: var(--colorTextoHoverClaro);
+.nav-menu .nav-link:hover {
+    color: var(--colorTextoHover);
 }
 
 #logo {
     width: 125px;
     height: 120px;
     transition: 5s;
+}
+
+
+/*
+===========================@MEDIA QUERY - TABLET - HEADER
+*/
+
+/*
+===========================@MEDIA QUERY - SMARTPHONE - HEADER
+*/
+@media (max-width: 800px) {
+
+    .menuPrincipal {
+        padding: 5px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 60px;
+        letter-spacing: 2px;
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 36px;
+        gap: 0;
+        flex-direction: column;
+        background-color: var(--bgColorHamburger);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    .navbar {
+        min-height: 70px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 24px;
+    }
+
+    .nav-branding {
+        font-size: 2em;
+    }    
+
+    .nav-link {
+        transition: 0.7s ease;
+    }
+
+    .nav-link:hover {
+        color: var(--colorTextoHover);
+    }
+
+    .hamburger {
+        /*display: none;*/
+        cursor: pointer;
+        background-color: var(--bgColorHamburger);
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        background-color: var(--bgColorHeader);
+    }
+
+    .bar:hover {
+        background-color: var(--bgColorFooter);
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    } 
+    
+    .nav-menu,.nav-link  {
+        color: var(--colorTextoClaro);
+    }
 }
 
 /*
@@ -97,7 +201,7 @@ a,ul,li,p,h1,h2,h3,h4,h5,h6,input,label {
 */
 
 .main {
-    background-color: var(--bgColorClaro);
+    background-color: var(--bgColorMain);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -113,24 +217,25 @@ banner da pagina principal
     width: 100%;
 }
 
-.banner img {
-    width: 100%;
+#bannerSite {
+    width: 95vw;
 }
 
 .menuProdutos {
     text-align: center;
     color: var(--colorTextoEscuro);
+    background-color: var(--bgColorMainTitle);
 }
 
 .menuProdutos h1{
-    padding: 20px;
+    padding: 50px;
 }
 
 .menuProdutos-itens {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 25px;
 }
 
 .menuProdutos-itens img {
@@ -139,21 +244,31 @@ banner da pagina principal
     border-radius: 10px;
     width: 250px;
     height: 290px;
+    min-width: 250px;
+    min-height: 290px;
+    margin-bottom: 20px;
+}
+
+.menuProdutos-itens img:hover {
+    box-shadow: 0 4px 8px 0 var(--bgColorFormCopy), 0 6px 20px 0 #00000030;
 }
 
 .menuProdutos-itens .prodItem {
     display: block;
     border: none;
     border-radius: 200px;
-    width: 200px;
+    width: 223px;
     height: 220px;
+    min-width: 200px;
+    min-height: 220px;
 }
 
 /*
 Section do cadastro do email para feed
 */
+
 .feedemail{
-    background-color: var(--bgColorEscuro);
+    background-color: var(--bgColorFormCopy);
     color: var(--colorTextoClaro);
     width: 100%;
     display: inline-block;
@@ -170,142 +285,61 @@ Section do cadastro do email para feed
     border: none;
     font-size: 1em;
     border-radius: 10px;
-    width: 500px;
+    width: 50vw;
+    min-width: 400px;
     height: 40px;
+    padding-left: 10px;
     margin-bottom: 16px;
 }
 
 #submit-button {
-    background-color: var(--bgColorMedioClaro);
+    background-color: var(--colorTextoClaro);
     color: var(--colorTextoEscuro);
     border: none;
     border-radius: 10px;
     font-size: 1.5em;
     width: 200px;
     height: 40px;
+    margin-top: 20px;
     margin-bottom: 20px;
 }
 
-#email:focus {
-    border-color: solid 2px var(--colorTextoHoverClaro);
+input:focus {
+	outline: none;
+	box-shadow: 0 0 0 2pt var(--bgColorHeader);
 }
 
 #submit-button:hover {
-    background-color: var(--brColorMedioEscuro);
+    background-color: var(--colorTextoHover);
+}
+
+.showMessage {
+    box-shadow: 0 2px 4px 0 var(--colorTextoClaro);
+    background-color: var(--bgColorMain);
+    color: var(--colorTextoHover);
 }
 
 /*
-=============================================================================================
-=========================== MAIN - CARDAPIO
-=============================================================================================
+===========================@MEDIA QUERY - RESPONSIVE - HOME
 */
+@media (max-width: 609px) {
 
-/*
-banner da pagina do cardapio
-*/
-.bannerCardapio {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
+    .feedemail p{        
+        font-size: 1em;
+    }
 
-.bannerCardapio img {
-    width: 100%;
-}
+    .feedemail h2 {
+        font-size: 1.6em;
+    }
 
-/*
-=============================================================================================
-=========================== MAIN - CONTATO
-=============================================================================================
-*/
+    #btnEmail {
+        min-width: 150px;
+        font-size: 1.3em;
+    }    
 
-.contato {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;    
-    width: 100%;
-}
-
-.contato-itens {
-    color: var(--colorTextoEscuro);
-    width: 40vw;
-    min-width: 360px;
-}
-
-.contato-itens h2{
-    margin-top: 15px;
-}
-
-.contato-itens input{
-    border: 1px solid var(--colorBorder);
-    font-size: 1em;
-    border-radius: 10px;
-    width: 100%;
-    height: 40px;
-    min-width: 360px;
-}
-
-textarea {
-    border: 1px solid var(--colorBorder);
-    font-size: 1em;
-    border-radius: 10px;
-    width: 100%; /*para ele acompanhar o tamanho do pai, o mesmo tem que ter tamanho em vw*/
-    height: 150px;
-    min-width: 360px;
-}
-
-.contato-itens label{
-    margin-top: 15px;
-}
-
-
-#btnContato {
-    background-color: var(--bgColorEscuro);
-    color: var(--colorTextoClaro);
-    border: none;
-    border-radius: 10px;
-    font-size: 1.5em;
-    width: 100%; /*para ele acompanhar o tamanho do pai, o mesmo tem que ter tamanho em vw*/
-    height: 40px;
-    min-width: 360px;
-}
-
-#btnContato:hover {
-    background-color: var(--brColorMedioEscuro);
-    color: var(--colorTextoHoverEscuro);
-}
-
-/*
-=============================================================================================
-=========================== MAIN - QUEM SOMOS
-=============================================================================================
-*/
-
-.quemsomos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;    
-    width: 100%;
-    gap: 10px;
-}
-
-.quemsomos-itens {
-    display: block;
-    color: var(--colorTextoEscuro);
-    width: 45%;
-    margin: 20px;
-}
-
-.quemsomos-itens p,li {
-    font-size: 1em;
-}
-
-.quemsomos-itens img{
-    display: block;
-    border: 1px solid var(--colorBorder);
-    font-size: 1em;
-    border-radius: 10px;
-    width: 250px;
+    #edtEmail {
+        min-width: 300px;
+    }
 }
 
 /*
@@ -315,10 +349,10 @@ textarea {
 */
 
 .footer {
-    background-color: var(--bgColorMedioClaro);
+    background-color: var(--bgColorFooter);
     color: var(--colorTextoEscuro);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     width: 100%    
 }
@@ -327,48 +361,33 @@ textarea {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    letter-spacing: 1px;/*espaço entre letras*/
-    padding: 20px;
 }
 
-.rodape-itens-quemsomos h3,p,li,i {
-    padding: 5px;
-}
-
-.rodape-itens-quemsomos {
-    display: flex;    
-    flex-wrap: wrap;
+.rodape-quemsomos {
+    display: flex;
     width: 33.33%; 
     min-width: 333px;
     padding: 20px;
     border-right: 1px solid var(--colorBorder);
 }
 
-.rodape-itens-quemsomos a {
+.rodape-quemsomos-itens {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.rodape-quemsomos-itens h3{
+    padding-bottom: 20px;
+}
+
+.rodape-quemsomos-itens a{
     color: var(--colorTextoEscuro);
     text-decoration: none;
 }
 
-.rodape-itens-quemsomos a:hover {
-    color: var(--colorTextoHoverClaro);
-    text-decoration: none;
-}
-
-.rodape-itens-contato a {
-    color: var(--colorTextoEscuro);
-    text-decoration: none;
-}
-
-.rodape-itens-contato a:hover {
-    color: var(--colorTextoHoverClaro);
-    text-decoration: none;
-}
-
-.rodape-itens-siganos {
-    display: block;
-    width: 33.33%;
-    min-width: 333px;
-    padding: 20px;
+.rodape-quemsomos-itens a:hover {
+    color: var(--colorTextoHover);
 }
 
 #logo2 {
@@ -376,26 +395,53 @@ textarea {
     height: 120px;
 }
 
-.rodape-itens-contato {
-    display: block;
+.rodape-contato {
+    display: flex;
+    justify-content: center;
     width: 33.33%;
     min-width: 333px;
     padding: 20px;
     border-right: 1px solid var(--colorBorder);
 }
 
-.footerSocial-item {
-    font-size: 2rem;
+.rodape-contato h3{
+    padding-bottom: 20px;
+}
+
+.rodape-contato-itens li {
+    padding-bottom: 10px;
+}
+
+.rodape-contato-itens a {
+    color: var(--colorTextoEscuro);
+    text-decoration: none;
+}
+
+.rodape-contato-itens a:hover {
+    color: var(--colorTextoHover);
+}
+
+.rodape-siganos {
+    display: flex;
+    justify-content: center;
+    width: 33.33%;
+    min-width: 333px;
+    padding: 20px;
+}
+
+.rodape-siganos-itens a{
+    font-size: 2em;
+    padding-right: 10px;
     color: var(--colorTextoEscuro);
 }
 
-.footerSocial-item:hover {
+.rodape-siganos-itens a:hover {
     font-size: 2em;
-    color: var(--colorTextoHoverClaro);
+    color: var(--colorTextoHover);
 }
 
 .copyrigh {
-    background-color: var(--bgColorEscuro);
+    background-color: var(--bgColorFormCopy);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -417,199 +463,37 @@ textarea {
 }
 
 .copyrigh-itens:hover a{
-    color: var(--colorTextoHoverClaro);
+    color: var(--colorTextoHover);
     font-size: 2em;
 }
 
 /*
-=============================================================================================
-=========================== @MEDIA QUERY - RESPONSIVIDADE DO SITE
-=============================================================================================
+===========================@MEDIA QUERY - RESPONSIVE - FOOTER
 */
 
-/*
-===========================@MEDIA QUERY - SMARTPHONE - HOME
+@media (max-width: 1015px) {
 
-@media (max-width: 609px) {
-    
-    .menuProdutos-itens img {        
-        min-width: 200px;
-        max-height: 220px;
-    }
-
-    .feedemail p{        
-        font-size: 1em;
-    }
-
-    .feedemail h2 {
-        font-size: 1.6em;
-    }
-
-    #btnEmail {
-        min-width: 150px;
-        font-size: 1.3em;
-    }    
-
-    #edtEmail {
-        min-width: 300px;
-    }
-}
-
-/*
-===========================@MEDIA QUERY - TABLET - HOME
-
-@media (min-width: 610px) and (max-width: 1120px) {
-
-    .menuProdutos-itens img {        
-        min-width: 200px;
-        max-height: 220px;
-    }
-
-    #btnEmail {
-        min-width: 200px;
-    }    
-
-    #edtEmail {
-        min-width: 400px;
-    }
-}
-
-/*
-=========================== @MEDIA QUERY - MOBILE - CONTATO
-
-
-@media (max-width: 1120px) {
-
-    .quemsomos-itens {
-        width: 90vw;
-    } 
-    .quemsomos-itens img {
-        width: 50vw;   
-        margin-left: 20vw;   
-    } 
-}
-
-
-
-/*
-===========================@MEDIA QUERY - MOBILE - CONTATO
-
-@media (max-width: 1120px) {
-
-    .contato-itens {
-        width: 90vw;
-    }   
-    
-    .contato-itens input{
-        width: 90vw;
-    }
-
-    .contato-itens textarea{
-        width: 90vw;
-    }
-
-    #btnContato {
-        width: 90vw;
-    }
-}
-
-/*
-===========================@MEDIA QUERY - TABLET
-
-@media (min-width: 610px) and (max-width: 1120px) {
-
-    .menuPri-item {
-        letter-spacing: 2px;
-        gap: 20px;
-    }
-}
-
-/*
-===========================@MEDIA QUERY - SMARTPHONE
-
-@media (max-width: 609px) {
-
-    .menuPrincipal {
-        padding: 5px;
-        text-align: center;
+    .rodape-contato {
+        border: none;
     }
     
-    .menuPri-item {
-        letter-spacing: 2px;
-        gap: 20px;
-    }
 }
 
+@media (max-width: 682px) {
 
-
-/*
-===========================@MEDIA QUERY - TABLET
-
-@media (min-width: 601px) and (max-width: 1120px) {
-
-    .rodape {
-        display: block;
-        margin-left: 15px;
+    .rodape-contato {
+        border: none;
     }
 
-    .rodape-itens h3 {
-        padding-top: 15px;
-    }
-
-    .rodape-itens p {
-        width: 80%;
-        padding-bottom: 0;
-    }
-
-    .rodape-itens a i {
-        padding-bottom: 20px;
+    .rodape-quemsomos {
+        border: none;
     }
     
-    .footerSocial-item:hover {
-        font-size: 1em;
-    }
+}
+
+@media (max-width: 700px) {
         
     .copyrigh {
-        height: 25vh;
-        display: block;
-    }
-    
-    .copyrigh-itens {
-        font-size: 0.6em;
-        padding-top: 5px; 
-    }
-
-}
-
-/*
-===========================@MEDIA QUERY - SMARTPHONE
-
-@media (max-width: 600px) {
-
-    .rodape {
-        display: block;
-        margin-left: 15px;
-    }
-
-    .rodape-itens h3 {
-        padding-top: 15px;
-    }
-
-    .rodape-itens p {
-        width: 90%;
-        padding-bottom: 0;
-    }
-
-    .rodape-itens a i {
-        padding-bottom: 20px;
-    }
-    
-    .footerSocial-item:hover {
-        font-size: 1em;
-    }
-        
-    .copyrigh {
-        height: 25vh;
         display: block;
     }
     
@@ -618,4 +502,3 @@ textarea {
         padding-top: 5px; 
     }
 }
-*/

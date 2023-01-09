@@ -2,37 +2,69 @@
 // VALIDAÇÃO DO FORMULÁRIO - CONTATO
 //================================================================================
 
-const formContato = document.querySelector('#cadastro_contato')
-
-
-formContato.addEventListener('submit', (event) => {
-        // Parar o envio do formulario
+    function showMessage(input, message, type) {
+        // pega o elemento small e setar a msg
+        const msg = input.parentNode.querySelector("small");
+        msg.innerText = message;
+        // atualizar a input com a classe
+        input.className = type ? "success" : "error";
+        return type;
+    }
+    
+    function showError(input, message) {
+        return showMessage(input, message, false);
+    }
+    
+    function showSuccess(input) {
+        return showMessage(input, "", true);
+    }
+    
+    function hasValue(input, message) {
+        if (input.value.trim() === "") {
+            return showError(input, message);
+        }
+        return showSuccess(input);
+    }
+    
+    function validateEmail(input, requiredMsg, invalidMsg) {
+        // chechando se o valor é vazio
+        if (!hasValue(input, requiredMsg)) {
+            return false;
+        }
+        // validando formato do e-mail
+        const emailRegex =
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    
+        const email = input.value.trim();
+        
+        if (!emailRegex.test(email)) {
+            return showError(input, invalidMsg);
+        }
+        return true;
+    }
+    
+    const form = document.querySelector("#cadastro_contato");
+    
+    const NAME_REQUIRED = "Por favor, digite seu nome!";
+    const EMAIL_REQUIRED = "Porfavor digite seu e-mail!";
+    const EMAIL_INVALID = "Por favor, digite seu e-mail no formato correto!";
+    const MESSAGE_REQUIRED = "Porfavor digite sua mensagem!";
+    
+    form.addEventListener("submit", function (event) {
+        // para o botão submit
         event.preventDefault();
-        const regContato = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-        const nameContato = document.querySelector("#nomeContato").value;
-        const emailContato = document.querySelector("#emailContato").value;
-        const mensagemContato = document.querySelector("#sugestao").value;
-
-        if (nameContato == "") {
-            alert("O Campo nome é obrigatório");
-            //input.className = "error"
-            return false;
+    
+        // valida o formulário
+        let nameValid = hasValue(form.elements["nomeContato"], NAME_REQUIRED);
+        let emailValid = validateEmail(form.elements["emailContato"], EMAIL_REQUIRED, EMAIL_INVALID);
+        let messageValid = hasValue(form.elements["sugestao"], MESSAGE_REQUIRED);
+        // se válida envie o formulário.
+        if (nameValid && emailValid && messageValid) {
+            alert("Enviado com sucesso!");
+            form.submit()
+            document.querySelector("#nomeContato").value = "";
+            document.querySelector("#emailContato").value = "";
+            document.querySelector("#sugestao").value = "";
         }
-
-        if (emailContato == "") {
-            alert("O campo e-mail é obrigatório");
-            return false;
-        }
-
-        if (mensagemContato == "") {
-            alert("O campo sugestão é obrigatório");
-            return false;
-        }
-
-        if (!regContato.test(emailContato)) {
-            alert("Esse e-mail não é valido");
-            return false;
-        }
-
-        return formContato.submit(alert("Seus dados foram enviados com sucesso!"));
     });
+    

@@ -1,198 +1,116 @@
-.container {
-	background-color: #fff;
-	border-radius: 5px;
-	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-	width: 350px;
+/*
+=============================================================================================
+=========================== MAIN - CONTATO
+=============================================================================================
+*/
+/*
+Contato de telefone e email
+*/
+.main-contato {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 100vw;
+}
+.contato-social {
+    color: var(--colorTextoEscuro);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;    
+    width: 100%;
+    padding: 20px;
 }
 
-form {
-	max-width: 400px;
-	margin: 10px auto;
-	padding: 0.5rem 1rem;
+.contato-social-itens h2 {
+    padding: 0 0 20px 0;
 }
 
-form h1 {
-	padding: 5px 0;
-	font-size: 1.4rem;
-	font-weight: normal;
-	text-align: center;
-	color: #111;
+.contato-social-itens p {
+    padding: 0 0 20px 0;
 }
 
-/*! form.css v1.0 | MIT License | https://www.javascripttutorial.net/ */
+.contato-social-itens li {
+    padding: 0 0 10px 0;
 
-.field {
-	margin-bottom: 0.75rem;
 }
 
-.field small {
-	color: #dc3545;
+.contato-social-itens a {
+    color: var(--colorTextoEscuro);
+    text-decoration: none;
+    font-size: 1.1em;
 }
 
-label {
-	display: inline-block;
-	margin-bottom: 5px;
-	vertical-align: top;
-	width: 100%;
+.contato-social-itens a:hover {
+    color: var(--colorTextoHover);
 }
 
-/* input, textarea */
-input,
-textarea,
-select {
-	border: solid 1px #ccc;
-	border-radius: 3px;
-	display: inline-block;
-	padding: 0.5rem 0.75rem;
-	width: 100%;
-	font-family: inherit;
-	font-size: 1rem;
+/*
+Formulario de contato
+*/
+
+.contato-email {
+	background-color: var(--bgColorFormCopy);
+	display: flex;
+	justify-content: center;
+	width: 100vw;
 }
 
-input::placeholder {
-	color: #c2c2c2;
+.contato-email-itens input{
+    border: 1px solid var(--colorBorder);
+    font-size: 1em;
+    border-radius: 10px;
+    width: 100%;
+    height: 40px;
+    min-width: 400px;
+    padding-left: 10px;
+    margin-top: 10px;
 }
 
-input:focus,
-textarea:focus,
-select:focus {
+.contato-email-itens label {
+    color: var(--colorTextoClaro);
+}
+
+textarea {
+    border: 1px solid var(--colorBorder);
+    font-size: 1.3em;
+    border-radius: 10px;
+    width: 100%; /*para ele acompanhar o tamanho do pai, o mesmo tem que ter tamanho em vw*/
+    height: 150px;
+    min-width: 360px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+textarea:focus {
 	outline: none;
-	box-shadow: 0 0 0 2pt rgb(49, 132, 253, 0.5);
+	box-shadow: 0 0 0 2pt var(--bgColorHeader);
 }
 
-input[disabled],
-textarea[disabled] {
-	background-color: #f5f5f5;
-	box-shadow: none;
-	color: #7a7a7a;
-	cursor: not-allowed;
+#btnContato {
+    background-color: var(--colorTextoClaro);
+    color: var(--colorTextoEscuro);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;
+    width: 450px; /*para ele acompanhar o tamanho do pai, o mesmo tem que ter tamanho em vw*/
+    height: 40px;
+    min-width: 360px;
 }
 
-/* input error */
-input.error,
-textarea.error,
-select.error {
-	border-color: #dc3545;
+#btnContato:hover {
+    background-color: var(--colorTextoHover);
 }
 
-input.error:focus,
-textarea.error:focus,
-select.error:focus {
-	box-shadow: 0 0 0 0.25rem rgb(220 53 69 / 25%);
+.field label {
+    margin-right: 15px;
 }
 
-/* input success */
-input.success,
-textarea.success,
-select.success {
-	border-color: #198754;
+.sugestao-contato label{
+    margin-right: 15px;
 }
 
-input.success:focus,
-textarea.success:focus {
-	box-shadow: 0 0 0 0.25rem rgb(25 135 84 / 25%);
-}
-
-/* button */
-button {
-	background: #0d6efd;
-	color: #fff;
-	border-radius: 0.25rem;
-	font-size: 1rem;
-	font-weight: 400;
-	border: 1px solid #0d6efd;
-	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
-		box-shadow 0.15s ease-in-out;
-	text-align: center;
-	padding: 0.375rem 0.75rem;
-}
-
-button:hover {
-	background: #0b5ed7;
-	border-color: #0a58ca;
-	cursor: pointer;
-}
-
-button:focus {
-	outline: none;
-	color: #fff;
-	background-color: #0b5ed7;
-	border-color: #0a58ca;
-	box-shadow: 0 0 0 0.25rem rgb(49 132 253 / 50%);
-}
-
-/* radio  & checkbox*/
-label.radio,
-label.checkbox {
-	width: auto;
-	cursor: pointer;
-	display: inline-block;
-	position: relative;
-	border-radius: 5px;
-}
-
-.stack label.radio,
-.stack label.checkbox {
-	display: block;
-	margin-left: auto;
-}
-
-.radio + .radio,
-.checkbox + .checkbox {
-	margin-left: 1rem;
-}
-
-input[type="checkbox"],
-input[type="radio"] {
-	vertical-align: baseline;
-	width: auto;
-}
-
-/* vertical form */
-.vertical label,
-.vertical input,
-.vertical textarea {
-	display: block;
-	width: 100%;
-}
-
-/* horizontal form */
-.horizontal .field {
-	display: grid;
-	grid-template-columns: 20% 1fr;
-	gap: 1rem 1rem;
-	align-items: center;
-	margin-bottom: 1rem;
-}
-.horizontal .field label {
-	grid-column: 1 / 2;
-	text-align: left;
-}
-
-.horizontal .field label.radio,
-.horizontal .field label.checkbox {
-	grid-column: 2 / 3;
-	text-align: left;
-}
-
-.horizontal .field input,
-.horizontal .field button,
-.horizontal .field small {
-	grid-column: 2 / 3;
-}
-
-/* Utility classes*/
-.half {
-	width: 50%;
-}
-.quarter {
-	width: 25%;
-}
-
-.full {
-	width: 100%;
-}
-
-.error {
-	color: #dc3545;
+.showMessage {
+    box-shadow: 0 2px 4px 0 var(--colorTextoClaro);
+    background-color: var(--bgColorMain);
+    color: var(--colorTextoHover);
 }

@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/cardapio.css">
     <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.min.css">
+    <script src="./js/estilos.js" defer></script>
 </head>
 <body>
     <!--=============================================================================================
@@ -38,7 +39,7 @@
                 alt="ir para a página whatsapp" 
                 target="_blank">
                     <i class="fa-brands fa-whatsapp"></i>
-            </a>           
+            </a>    
                         
         </nav>        
 
@@ -47,11 +48,16 @@
             <!-- Logo do site -->
             <a href="./index.html" target="_top"><img src="./img/logo/logoSite.png" alt="Logo do site" id="logo"></a>
             <!-- Menu Principal -->
-            <ul class="menuPri-item">
-                <li><a href="./index.html" target="_top" class="menuPri-item" alt="ir para a página home">Home</a></li>
-                <li><a href="./cardapio.html" target="_top" class="menuPri-item" alt="ir para a página cardápio">Cardápio</a></li>
-                <li><a href="./contato.html" target="_top" class="menuPri-item" alt="ir para a página contato">Contato</a></li>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="./index.html" class="nav-link" target="_top" alt="ir para a página home">Home</a></li>
+                <li class="nav-item"><a href="./cardapio.html" class="nav-link" target="_top" alt="ir para a página cardápio">Cardápio</a></li>
+                <li class="nav-item"><a href="./contato.html" class="nav-link" target="_top" alt="ir para a página contato">Contato</a></li>
             </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
 
@@ -70,50 +76,51 @@
         -->
         <section class="menuProdutos">
             <h1>Bolos Persolnalizados</h1>
-            <section class="menuProdutos-itens">
+            <div class="menuProdutos-itens">
                 <img src="./img/produtos/boloPersolnalisado/av10.png" alt="bolo personalisado">
                 <img src="./img/produtos/boloPersolnalisado/av12.png" alt="bolo personalisado">
                 <img src="./img/produtos/boloPersolnalisado/Imagem8.png" alt="bolo personalisado">
                 <img src="./img/produtos/boloPersolnalisado/av8.png" alt="bolo personalisado">
-            </section>
+            </div>
         </section>
         <!-- 
         menu de bolos tradicionais
         -->
         <section class="menuProdutos">
             <h1>Bolos Tradicionais</h1>
-            <section class="menuProdutos-itens">
+            <div class="menuProdutos-itens">
                 <img src="./img/produtos/boloTradicional/av11.png" alt="bolo tradicional">
                 <img src="./img/produtos/boloTradicional/personalizado.png" alt="bolo tradicional">
                 <img src="./img/produtos/boloTradicional/av9.png" alt="bolo tradicional">
                 <img src="./img/produtos/boloTradicional/tradicional.png" alt="bolo tradicional">
-            </section>
+            </div>
         </section>
         <!-- 
         menu de bolos caseirinhos e minivulcão
         -->
         <section class="menuProdutos">
             <h1>Caseirinhos e Mini Vulcão</h1>
-            <section class="menuProdutos-itens">
+            <div class="menuProdutos-itens">
                 <img src="./img/produtos/caseirinhoEminivulcao/av7.png" alt="Caseirinhos e Mini Vulcão">
                 <img src="./img/produtos/caseirinhoEminivulcao/Imagem5.png" alt="Caseirinhos e Mini Vulcão">
                 <img src="./img/produtos/caseirinhoEminivulcao/Imagem6.png" alt="Caseirinhos e Mini Vulcão">
                 <img src="./img/produtos/caseirinhoEminivulcao/Imagem7.png" alt="Caseirinhos e Mini Vulcão">
-            </section>
+            </div>
         </section>
         <!-- 
         fatias slices
         -->
         <section class="menuProdutos">
             <h1>Fatias Slices</h1>
-            <section class="menuProdutos-itens">
+            <div class="menuProdutos-itens">
                 <img src="./img/produtos/fatiasSlices/Imagem1.png" alt="Fatias Slices">
                 <img src="./img/produtos/fatiasSlices/Imagem2.png" alt="Fatias Slices">
                 <img src="./img/produtos/fatiasSlices/Imagem3.png" alt="Fatias Slices">
                 <img src="./img/produtos/fatiasSlices/Imagem4.png" alt="Fatias Slices">
-            </section>
+            </div>
         </section>
-    </br></br></br>   
+        
+        <section class="gamb"></section>
     
     <!--============================================================================================= 
         FOOTER - RODAPÉ DO SITE
@@ -122,56 +129,52 @@
     <footer class="footer">
         <section class="rodape">
             <!--Quem somos-->
-            <div class="rodape-itens-quemsomos">
-                <a 
-                    href="./quemsomos.html">
-                    <h3>A Abacaxi Veludo</h3>
+            <div class="rodape-quemsomos">
+                <div class="rodape-quemsomos-itens">
+                    <a href="./quemsomos.html">
 
-                    <p>Somos uma empresa de confeitaria de qualidade, com preço justo, 
-                        entrega rápida e foco no Cliente. 
-                        Sabor & emoção feito para você!
-                    </p>
-                
-                <a href="./quemsomos.html" 
-                    target="_top">
-                    <img src="./img/logo/logoAbacaxiVeludo.png" 
-                    alt="ir para a página quem somos" 
-                    id="logo2">
-                </a>
+                        <h3>A Abacaxi Veludo</h3>
+
+                        <p>Somos uma empresa de confeitaria de qualidade, com preço justo, 
+                            entrega rápida e foco no Cliente. 
+                            Sabor & emoção feito para você!
+                        </p>
+                    
+                    <a href="./quemsomos.html" 
+                        target="_top">
+                        <img src="./img/logo/logoAbacaxiVeludo.png" 
+                        alt="ir para a página quem somos" 
+                        id="logo2">
+                    </a>
+                </div>
             </div>
 
             <!--Entre em Contato-->
-            <div class="rodape-itens-contato">
-                <h3>Entre em contato</h3>
-                <ul>
-                    <li>
-                        <a 
-                            href="https://api.whatsapp.com/send?phone=5571996172933&text=teste%20de%20link" 
-                            target="_blank">
-                            <i class="fa-brands fa-square-whatsapp"></i>
-                            (71)99617-2933
-                        </a>
-                    </li>
-                    <li><a href="tel:+557199617-2933"><i class="fa-solid fa-phone-flip"></i> +557199617-2933</a></li>
-                    <li><a href="mailto:abacaxiveludo@gmail.com"><i class="fa-solid fa-envelope"></i> abacaxiveludo@gmail.com</a></li>
-                </ul>   
+            <div class="rodape-contato">
+                <div class="rodape-contato-itens">
+                    <h3>Entre em contato</h3>
+                    <ul>
+                        <li>
+                            <a 
+                                href="https://api.whatsapp.com/send?phone=5571996172933&text=teste%20de%20link" 
+                                target="_blank">
+                                <i class="fa-brands fa-square-whatsapp"></i>
+                                (71)99617-2933
+                            </a>
+                        </li>
+                        <li><a href="tel:+557199617-2933"><i class="fa-solid fa-phone-flip"></i> +557199617-2933</a></li>
+                        <li><a href="mailto:abacaxiveludo@gmail.com"><i class="fa-solid fa-envelope"></i> abacaxiveludo@gmail.com</a></li>
+                    </ul> 
+                </div>  
             </div>
 
             <!--Siga-nos-->
-            <div class="rodape-itens-siganos">
-                <h3>Siga-nos em nossas redes</h3></br>
-                <a 
-                    href = "https://www.instagram.com/abacaxiveludo/" 
-                    class = "footerSocial-item" 
-                    target = "_blank">
-                    <i class = "fa-brands fa-square-instagram"></i>
-                </a> 
-                <a 
-                    href="./index.html" 
-                    class="footerSocial-item" 
-                    target="_top">
-                    <i class="fa-brands fa-facebook"></i>
-                </a>  
+            <div class="rodape-siganos">
+                <div class="rodape-siganos-itens">
+                    <h3>Siga-nos em nossas redes</h3></br>
+                    <a href = "https://www.instagram.com/abacaxiveludo/" target = "_blank"><i class = "fa-brands fa-square-instagram"></i></a> 
+                    <a href="./index.html" target="_top"><i class="fa-brands fa-facebook"></i></a>
+                </div>  
             </div>
         </section>
 
@@ -186,6 +189,6 @@
             </p>           
         </section>
     </footer>
-
+    
 </body>
 </html>
